@@ -23,9 +23,9 @@ test('H1 · el catálogo tiene 8 productos', async ({ page }) => {
 
 // VEREDICTO H2: BUG DEL PRODUCTO. Oráculo: 2 × 65.000 = 130.000 − 20% (26.000) = 104.000 × 19% = 19.760.
 // La tienda muestra $ 24.700 (19% de 130.000: calcula el IVA sin restar el descuento). Se reproduce a mano y falla
-// siempre igual. Es el mismo bug de US-11 · CA2. La prueba estaba bien: queda como fallo esperado.
+// siempre igual. Es el mismo bug de US-11 · CA2 (TD2HU-91). La prueba estaba bien: queda como fallo esperado.
 test('H2 · el IVA de 2 mochilas con DESC20 es $ 19.760', async ({ page }) => {
-  test.fail(true, 'JIRA-XX · el IVA se calcula sobre el subtotal sin descontar');
+  test.fail(true, 'TD2HU-91 · el IVA se calcula sobre el subtotal sin descontar');
   await page.goto('/');
   const tarjeta = page
     .locator('.rounded-lg')

@@ -9,7 +9,7 @@ import { TiendaPage } from '../pages/TiendaPage';
 
 test.describe('US-16 · Que mis datos no queden a la vista de otra persona', () => {
   test('CA1: tras confirmar y empezar otra compra, el formulario aparece vacío', async ({ page }) => {
-    test.fail(true, 'JIRA-XX · el formulario de envío conserva los datos del comprador anterior');
+    test.fail(true, 'TD2HU-96 · el formulario de envío conserva los datos del comprador anterior');
     // ARRANGE: una compra completa
     const tienda = new TiendaPage(page);
     await tienda.abrir();
@@ -54,7 +54,7 @@ test.describe('US-17 · Confirmar mi pedido', () => {
 
   // Predicción antes de ejecutar: fallará, porque el contador de pedidos vive en memoria y se reinicia al recargar.
   test('CA3: un pedido hecho después de recargar la página no repite un número anterior', async ({ page }) => {
-    test.fail(true, 'JIRA-XX · el número de pedido se repite después de recargar la página');
+    test.fail(true, 'TD2HU-97 · el número de pedido se repite después de recargar la página');
     const tienda = new TiendaPage(page);
     await tienda.abrir();
     await tienda.comprar('Esfero azul');

@@ -27,8 +27,8 @@ test.describe('US-09 · Aplicar un código de descuento', () => {
 
   // PRUEBAS DIRIGIDAS POR DATOS (Parte 4a): una prueba por variante. Solo fallan las que traen bug.
   const VARIANTES = [
-    { codigo: 'desc10', bug: 'JIRA-XX · el código de descuento distingue mayúsculas y minúsculas' },
-    { codigo: 'Desc10', bug: 'JIRA-XX · el código de descuento distingue mayúsculas y minúsculas' },
+    { codigo: 'desc10', bug: 'TD2HU-89 · el código de descuento distingue mayúsculas y minúsculas' },
+    { codigo: 'Desc10', bug: 'TD2HU-89 · el código de descuento distingue mayúsculas y minúsculas' },
     { codigo: ' DESC10 ', bug: '' },
   ];
   for (const { codigo, bug } of VARIANTES) {
@@ -63,7 +63,7 @@ test.describe('US-10 · Recibir aviso si el código no es válido', () => {
   });
 
   test('CA2: un código inválido NO borra un descuento válido ya aplicado', async ({ page }) => {
-    test.fail(true, 'JIRA-XX · un código inválido borra el descuento válido ya aplicado');
+    test.fail(true, 'TD2HU-90 · un código inválido borra el descuento válido ya aplicado');
     // ARRANGE: DESC10 aplicado y comprobado
     const tienda = new TiendaPage(page);
     await tienda.abrir();
@@ -81,7 +81,7 @@ test.describe('US-10 · Recibir aviso si el código no es válido', () => {
 
 test.describe('US-11 · Ver el IVA correcto', () => {
   test('CA2: con descuento, el IVA se calcula sobre el valor descontado', async ({ page }) => {
-    test.fail(true, 'JIRA-XX · el IVA se calcula sobre el subtotal sin descontar');
+    test.fail(true, 'TD2HU-91 · el IVA se calcula sobre el subtotal sin descontar');
     // ORÁCULO: el esperado sale del requisito (IVA = 19% de (subtotal − descuento)), no de la pantalla.
     const subtotal = 65000;
     const descuento = subtotal * 0.1;
@@ -99,7 +99,7 @@ test.describe('US-11 · Ver el IVA correcto', () => {
 
 test.describe('US-12 · Ver el total a pagar correcto', () => {
   test('CA2: con descuento, el total es subtotal − descuento + IVA (IVA sobre lo descontado)', async ({ page }) => {
-    test.fail(true, 'JIRA-XX · el IVA se calcula sobre el subtotal sin descontar (el total sale mayor)');
+    test.fail(true, 'TD2HU-92 · el total sale mayor porque el IVA no resta el descuento (relacionado con TD2HU-91)');
     const subtotal = 65000;
     const descuento = subtotal * 0.1;
     const iva = (subtotal - descuento) * 0.19;

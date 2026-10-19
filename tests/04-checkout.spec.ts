@@ -13,16 +13,16 @@ import { TiendaPage } from '../pages/TiendaPage';
 const CORREOS_VALIDOS = [
   { correo: 'juan@correo.com', bug: '' },
   { correo: 'ana_gomez@gmail.com', bug: '' },
-  { correo: 'ana.gomez@gmail.com', bug: 'JIRA-XX · el validador de correo rechaza correos válidos (".", "-", "+", subdominios)' },
-  { correo: 'ana-gomez@gmail.com', bug: 'JIRA-XX · el validador de correo rechaza correos válidos (".", "-", "+", subdominios)' },
-  { correo: 'ana+tienda@gmail.com', bug: 'JIRA-XX · el validador de correo rechaza correos válidos (".", "-", "+", subdominios)' },
-  { correo: 'ana@universidad.edu.co', bug: 'JIRA-XX · el validador de correo rechaza correos válidos (".", "-", "+", subdominios)' },
+  { correo: 'ana.gomez@gmail.com', bug: 'TD2HU-95 · el validador de correo rechaza correos válidos (".", "-", "+", subdominios)' },
+  { correo: 'ana-gomez@gmail.com', bug: 'TD2HU-95 · el validador de correo rechaza correos válidos (".", "-", "+", subdominios)' },
+  { correo: 'ana+tienda@gmail.com', bug: 'TD2HU-95 · el validador de correo rechaza correos válidos (".", "-", "+", subdominios)' },
+  { correo: 'ana@universidad.edu.co', bug: 'TD2HU-95 · el validador de correo rechaza correos válidos (".", "-", "+", subdominios)' },
 ];
 const CORREOS_MAL_FORMADOS = ['ana.gmail.com', 'ana@', '@gmail.com', 'ana gomez@gmail.com', 'ana@@gmail.com', 'ana@gmail'];
 
 test.describe('US-13 · Ir a pagar desde el carrito', () => {
   test('CA3: con total cero o negativo no se puede ir a pagar', async ({ page }) => {
-    test.fail(true, 'JIRA-XX · se puede ir a pagar con total $ 0 (no se valida el total)');
+    test.fail(true, 'TD2HU-93 · se puede ir a pagar con total $ 0 (no se valida el total)');
     // ARRANGE: 1 mochila y "−" para llevar la cantidad a 0
     const tienda = new TiendaPage(page);
     await tienda.abrir();

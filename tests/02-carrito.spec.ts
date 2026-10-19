@@ -55,7 +55,7 @@ test.describe('US-04 · Agregar productos sin superar el stock', () => {
   });
 
   test('CA3: 4 + 4 mochilas supera el stock (6) y debe rechazarse', async ({ page }) => {
-    test.fail(true, 'JIRA-XX · agregar la misma mochila en dos tandas supera el stock');
+    test.fail(true, 'TD2HU-68 · agregar la misma mochila en dos tandas supera el stock');
     // ARRANGE
     await page.goto('/');
     const tarjeta = page
@@ -79,7 +79,7 @@ test.describe('US-04 · Agregar productos sin superar el stock', () => {
 
 test.describe('US-05 · Aumentar la cantidad desde el carrito', () => {
   test('CA2: "+" no pasa del stock (6 mochilas)', async ({ page }) => {
-    test.fail(true, 'JIRA-XX · el botón "+" del carrito permite superar el stock');
+    test.fail(true, 'TD2HU-73 · el botón "+" del carrito permite superar el stock');
     // ARRANGE: las 6 mochilas del stock en el carrito
     await page.goto('/');
     const tarjeta = page
@@ -103,7 +103,7 @@ test.describe('US-05 · Aumentar la cantidad desde el carrito', () => {
 test.describe('US-06 · Disminuir la cantidad desde el carrito', () => {
   // Elegimos la salida "se queda en 1" (el criterio también aceptaría que el producto se elimine).
   test('CA2: con cantidad 1, "−" no la deja en 0 ni en negativo (se queda en 1)', async ({ page }) => {
-    test.fail(true, 'JIRA-XX · el botón "−" deja la cantidad en 0 y luego en negativo');
+    test.fail(true, 'TD2HU-86 · el botón "−" deja la cantidad en 0 y luego en negativo');
     // ARRANGE
     await page.goto('/');
     const tarjeta = page
