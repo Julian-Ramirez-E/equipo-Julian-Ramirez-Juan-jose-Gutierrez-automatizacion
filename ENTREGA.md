@@ -1,4 +1,3 @@
-
 # Entrega · Laboratorio 3.1 · Introducción a la automatización de pruebas
 
 **Equipo:** `equipo-Julian-Ramirez-Juan-jose-Gutierrez` · **Integrantes:** Julián Ramírez, Juan José Gutiérrez · **Repositorio:** https://github.com/Julian-Ramirez-E/equipo-Julian-Ramirez-Juan-jose-Gutierrez-automatizacion
@@ -16,7 +15,7 @@
 | US-07 · CA2 | Sí | Flujo básico del carrito, se ejecuta en cada regresión; estable y rápido. |
 | US-09 · CA1 / CA3 | Sí | Dinero en juego; el cálculo es exacto y las variantes (mayúsculas, espacios) se cubren con una tabla de datos. |
 | US-10 · CA2 | Sí | Riesgo: el cliente pierde un descuento ya ganado; fácil de comprobar con el valor del descuento. |
-| US-11 · CA2 / US-12 · CA2 | Sí | Riesgo alto (cobro e impuestos); con un oráculo calculado en la prueba la máquina verifica mejor que a ojo. |
+| US-11 · CA2 / US-12 · CA2 | Sí | Riesgo alto (cobro e impuestos); con un oráculo calculated en la prueba la máquina verifica mejor que a ojo. |
 | US-13 · CA3 | Sí | Evita cobrar $ 0; el estado del botón (deshabilitado) se verifica de forma exacta. |
 | US-15 · CA1–CA4 | Sí | 12 correos: a mano es tedioso y repetitivo; ideal para pruebas dirigidas por datos. |
 | US-16 · CA1 | Sí | Riesgo de privacidad; el flujo es largo (dos compras) y a mano cuesta minutos. |
